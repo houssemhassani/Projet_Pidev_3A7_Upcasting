@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EmployeesController">
+    <children>
+      <TableView fx:id="table_view" layoutX="19.0" layoutY="38.0" prefHeight="375.0" prefWidth="636.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="155.0" text="Nom" />
+          <TableColumn fx:id="prenom" prefWidth="155.0" text="Prenom" />
+            <TableColumn fx:id="cin" prefWidth="140.0" text="CIN" />
+            <TableColumn fx:id="email" prefWidth="185.0" text="E-mail" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutY="414.0" prefHeight="38.0" prefWidth="731.0" style="-fx-background-color: #03224C;">
+         <children>
+            <Button fx:id="delete" layoutX="567.0" layoutY="7.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #03224C;" text="Retirer Employee" textFill="WHITE" />
+            <Button fx:id="add" layoutX="460.0" layoutY="6.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #03224C;" text="Ajouter Employee" textFill="#f2f2f2" />
+            <Button fx:id="gererpublication" layoutX="268.0" layoutY="6.0" mnemonicParsing="false" onAction="#gererpublication" style="-fx-background-color: #03224C;" text="Gérer Publication" textFill="#f2f2f2" />
+            <Button fx:id="gererresponsable" layoutX="-2.0" layoutY="5.0" mnemonicParsing="false" onAction="#gererResponsable" style="-fx-background-color: #03224C;" text="Gérer Responsable" textFill="#f2f2f2" />
+            <Button fx:id="qrcode" layoutX="669.0" layoutY="7.0" mnemonicParsing="false" onAction="#qrCode" style="-fx-background-color: #03224C;" text="QRCode" textFill="#fffdfd" />
+            <Button fx:id="gererservice" layoutX="372.0" layoutY="6.0" mnemonicParsing="false" onAction="#gererservice" style="-fx-background-color: #03224C;" text="Gérer Service" textFill="#f2f2f2" />
+            <Button fx:id="gerercitoyen" layoutX="110.0" layoutY="6.0" mnemonicParsing="false" onAction="#gerercitoyen" style="-fx-background-color: #03224C;" text="Gérer Citoyen" textFill="#f2f2f2" />
+            <Button fx:id="gereradmin" layoutX="190.0" layoutY="6.0" mnemonicParsing="false" onAction="#gereradmin" style="-fx-background-color: #03224C;" text="Gérer Admin" textFill="#f2f2f2" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="143.0" layoutY="-1.0" text="Liste des Employées" textFill="#09418a">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.ModifierServiceResponsableController">
+    <children>
+      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="20.0" prefHeight="371.0" prefWidth="573.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="-8.0" layoutY="-9.0" prefHeight="422.0" prefWidth="592.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="update" layoutX="209.0" layoutY="284.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #03224C;" text="Modifier" textFill="#f2f2f2" />
+                  <Button fx:id="annuler" layoutX="351.0" layoutY="284.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #03224C;" text="Annuler" textFill="#f2f2f2" />
+                  <AnchorPane layoutY="363.0" prefHeight="38.0" prefWidth="593.0" style="-fx-background-color: #03224C;">
+                     <children>
+                        <Button fx:id="gererpublication" layoutX="380.0" layoutY="6.0" mnemonicParsing="false" onAction="#gererpublication" style="-fx-background-color: #03224C;" text="Gérer Publication" textFill="#f2f2f2" />
+                        <Button fx:id="gerercitoyens" layoutX="4.0" layoutY="6.0" mnemonicParsing="false" onAction="#gerercitoyens" style="-fx-background-color: #03224C;" text="Gérer Citoyen" textFill="#f2f2f2" />
+                        <Button fx:id="gererresponsable" layoutX="118.0" layoutY="6.0" mnemonicParsing="false" onAction="#gererresponsable" style="-fx-background-color: #03224C;" text="Gérer Responsable" textFill="#f2f2f2" />
+                        <Button fx:id="gereremployee" layoutX="254.0" layoutY="6.0" mnemonicParsing="false" onAction="#gereremployee" style="-fx-background-color: #03224C;" text="Gérer Employée" textFill="#f2f2f2" />
+                        <Button fx:id="gererservice" layoutX="498.0" layoutY="6.0" mnemonicParsing="false" onAction="#gererservice" style="-fx-background-color: #03224C;" text="Gérer Service" textFill="#f2f2f2" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="100.0" layoutY="52.0" text="Nom :" />
+                  <Label layoutX="100.0" layoutY="89.0" text="Prénom :" />
+                  <Label layoutX="225.0" layoutY="14.0" text="Modifier Responsable" textFill="#10056b">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="126.0" text="Email :" />
+                  <Label layoutX="100.0" layoutY="164.0" text="CIN :" />
+                  <Label layoutX="100.0" layoutY="203.0" text="Service : " />
+                  <TextField fx:id="nom" layoutX="196.0" layoutY="48.0" />
+                  <TextField fx:id="prenom" layoutX="196.0" layoutY="85.0" />
+                  <TextField fx:id="email" layoutX="196.0" layoutY="122.0" />
+                  <TextField fx:id="cin" layoutX="196.0" layoutY="160.0" />
+                  <ComboBox fx:id="service" layoutX="195.0" layoutY="199.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

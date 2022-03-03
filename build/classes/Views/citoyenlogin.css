@@ -1,0 +1,17 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.root
+{
+    -fx-background-color :#100f1f;
+}
+.cin
+{
+    -fx-text-inner-color:#9991d0;
+}
+.mdp
+{
+    -fx-text-inner-color:#9991d0;
+}
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="759.0" stylesheets="@citoyenlogin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChoixUtilisateurController">
+   <children>
+      <ImageView id="admin" fx:id="admin" fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="87.0" onMouseClicked="#adminInterface" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/admin-login-icon-15.png" />
+         </image>
+      </ImageView>
+      <ImageView id="citoyen" fx:id="citoyen" fitHeight="150.0" fitWidth="200.0" layoutX="165.0" layoutY="87.0" onMouseClicked="#citoyenInterface" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/espacecitoyen.png" />
+         </image>
+      </ImageView>
+      <ImageView id="personnel" fx:id="employee" fitHeight="150.0" fitWidth="200.0" layoutX="361.0" layoutY="87.0" onMouseClicked="#EmployeeInterface" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/espaceutilisateur.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="212.0" layoutY="15.0" text="Choisisez Votre Espace" textFill="#9991d0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="responsableinterface" fitHeight="174.0" fitWidth="228.0" layoutX="521.0" layoutY="88.0" onMouseClicked="#interfaceresponsable" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/manager.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="270.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/tunisie.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

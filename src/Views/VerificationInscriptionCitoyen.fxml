@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #100f1f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.VerificationInscriptionCitoyenController">
+   <children>
+      <Label layoutX="247.0" layoutY="50.0" text="E-Citoyen" textFill="#9991d0">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="116.0" text="Un e-mail aura envoyée à votre compte " textFill="#9991d0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="217.0" layoutY="183.0" text="Vérifiez votre boite e-mail !!" textFill="#9991d0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="233.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/R.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="email" layoutX="315.0" layoutY="120.0" text="Label" textFill="#3115d3" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="152.0" text="aprés la vérification de votre inscription " textFill="#9991d0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

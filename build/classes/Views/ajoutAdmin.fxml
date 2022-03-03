@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjoutAdminController">
+    <children>
+      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="20.0" prefHeight="371.0" prefWidth="573.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="-14.0" layoutY="-20.0" prefHeight="419.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="nom" layoutX="85.0" layoutY="11.0" promptText="Nom" />
+                  <Label layoutX="15.0" layoutY="16.0" text="Nom" />
+                  <Label layoutX="16.0" layoutY="75.0" text="Prenom " />
+                  <Label layoutX="14.0" layoutY="143.0" text="Email" />
+                  <TextField fx:id="email" layoutX="85.0" layoutY="139.0" promptText="Email" />
+                  <Label layoutX="255.0" layoutY="75.0" text="Cin" />
+                  <TextField fx:id="cin" layoutX="366.0" layoutY="63.0" promptText="CIN" />
+                  <Label layoutX="250.0" layoutY="15.0" text="Num_Tel" />
+                  <PasswordField fx:id="mdp" layoutX="299.0" layoutY="199.0" promptText="Mot de passe" />
+                  <Label layoutX="253.0" layoutY="143.0" text="Mot de passe" />
+                  <Label layoutX="140.0" layoutY="205.0" text="Confirm mot de passe" />
+                  <PasswordField fx:id="confirmmdp" layoutX="365.0" layoutY="138.0" promptText="Confirm mot de passe" />
+                  <Label fx:id="cinerreur" layoutX="89.0" layoutY="234.0" text="Label" visible="false" />
+                  <Label fx:id="serviceeerreur" layoutX="371.0" layoutY="110.0" text="Label" textFill="#d02626" visible="false" />
+                  <Label fx:id="confirmerreur" layoutX="365.0" layoutY="234.0" text="ertretre" textFill="#da1f1f" visible="false" />
+                  <TextField fx:id="prenom" layoutX="85.0" layoutY="71.0" promptText="Prenom" />
+                  <TextField fx:id="num_tel" layoutX="365.0" layoutY="13.0" promptText="Num_tel" />
+                  <Button fx:id="ajouter" layoutX="209.0" layoutY="284.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #03224C;" text="Ajouter" textFill="#f2f2f2" />
+                  <Button fx:id="annuler" layoutX="351.0" layoutY="284.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #03224C;" text="Annuler" textFill="#f2f2f2" />
+                  <AnchorPane layoutX="3.0" layoutY="381.0" prefHeight="38.0" prefWidth="592.0" style="-fx-background-color: #03224C;">
+                     <children>
+                        <Button fx:id="gererresponsable" layoutX="97.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererresponsable" style="-fx-background-color: #03224C;" text="Gérer Responsable" textFill="#f2f2f2" />
+                        <Button fx:id="gererpublication" layoutX="389.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererpublication" style="-fx-background-color: #03224C;" text="Gérer Publication" textFill="#f2f2f2" />
+                        <Button fx:id="gerercitoyens" layoutX="9.0" layoutY="6.0" mnemonicParsing="false" onAction="#gerercitoyens" style="-fx-background-color: #03224C;" text="Gérer Citoyen" textFill="#f2f2f2" />
+                        <Button fx:id="gererservice" layoutX="497.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererService" style="-fx-background-color: #03224C;" text="Gérer Service" textFill="#f2f2f2" />
+                        <Button fx:id="gereremployee" layoutX="209.0" layoutY="7.0" mnemonicParsing="false" onAction="#gereremployee" style="-fx-background-color: #03224C;" text="Gérer Employée" textFill="#f2f2f2" />
+                        <Button fx:id="gereradmin" layoutX="306.0" layoutY="7.0" mnemonicParsing="false" onAction="#gereradmin" style="-fx-background-color: #03224C;" text="Gérer Admin" textFill="#f2f2f2" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
