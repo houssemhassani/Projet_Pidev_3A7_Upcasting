@@ -73,9 +73,9 @@ public class ModifierMotDePasseResponsableController implements Initializable {
                         a.setContentText("Modification  Validée");
                         a.show();
                         
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/AdminLogin.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/ResponsableLogin.fxml"));
                         Parent root = loader.load();
-                        CitoyenLoginController verif=loader.getController();
+                        ResponsableLoginController verif=loader.getController();
                         this.modifier.getScene().setRoot(root);
                         
                     } catch (IOException ex) {

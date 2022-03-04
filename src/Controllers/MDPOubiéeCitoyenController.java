@@ -54,7 +54,7 @@ public class MDPOubiéeCitoyenController implements Initializable {
     @FXML
     private void verifieremail(ActionEvent event) {
         MotDePasseOublieeService mdp=new MotDePasseOublieeService();
-        String verif=mdp.motDePasseOublieeAdmin(this.cin.getText());
+        String verif=mdp.motDePasseOublieeCitoyen(this.cin.getText());
         if(verif!=null)
         {
             this.random.setText(verif);

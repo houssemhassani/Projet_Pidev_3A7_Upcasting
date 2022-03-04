@@ -76,11 +76,11 @@ public class AdminLoginController implements Initializable {
             return;
         }
         if(s.seConnecter(cin.getText(), mdp.getText())) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Citoyens.fxml"));
-            Parent root = loader.load();
-            CitoyensController verif=loader.getController();
-            this.btnLogin.getScene().setRoot(root); 
-            
+            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/Citoyens.fxml"));
+        Scene scene = new Scene(root);
+           primaryStage.setScene(scene);
+        primaryStage.show();  
             }
         else
         {

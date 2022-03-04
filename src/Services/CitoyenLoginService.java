@@ -69,7 +69,7 @@ public class CitoyenLoginService {
         System.out.println("citoyen ajoutee");
         return  true;
     }
-    public static void modifierMotDePasse(String cin,String ancien_mot_de_passe,String nouveau_mot_de_passe)
+    public  boolean modifierMotDePasse(String cin,String nouveau_mot_de_passe)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -85,17 +85,18 @@ public class CitoyenLoginService {
             cit.setCin(resultat.getString("cin"));
             cit.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
-            if(BCrypt.checkpw(ancien_mot_de_passe,cit.getMot_de_passe()))
-            {
+            
                 update=cnx.prepareStatement("Update citoyen set mot_de_passe='"+BCrypt.hashpw(nouveau_mot_de_passe,BCrypt.gensalt())+"' Where cin='"+cin+"'");
-                update.executeLargeUpdate();
+                update.executeUpdate();
                 System.out.println("mot de passe modifiee");
-            }
-            else 
-                System.err.println("lancien mot de passe est incorrect");
+                return true;
+            
+            
+                
             
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+            return  false;
         }
         
          
@@ -135,24 +136,31 @@ public class CitoyenLoginService {
     }
      public  boolean seConnecter(String cin,String mot_de_passe)
      {
-         PreparedStatement select;
+          PreparedStatement select;
          ResultSet resultat;
          Citoyen cit=new Citoyen();
         try {
-            select=cnx.prepareStatement("Select nom,prenom,email,cin,mot_de_passe from citoyen where cin='"+cin+"'");
+            select=cnx.prepareStatement("Select * from citoyen where cin='"+cin+"'");
             resultat=select.executeQuery();
-            while (resultat.next()) {
-            cit.setNom(resultat.getString("nom"));
-            cit.setPrenom(resultat.getString("prenom"));
-            cit.setEmail(resultat.getString("email"));
-            cit.setCin(resultat.getString("cin"));
-            cit.setMot_de_passe(resultat.getString("mot_de_passe"));
+            if(resultat.isBeforeFirst())
+            {
+                while (resultat.next()) {
+                    cit.setNom(resultat.getString("nom"));
+                    cit.setPrenom(resultat.getString("prenom"));
+                    cit.setEmail(resultat.getString("email"));
+                    cit.setCin(resultat.getString("cin"));
+                    cit.setMot_de_passe(resultat.getString("mot_de_passe"));
+                }
+                if(BCrypt.checkpw(mot_de_passe,cit.getMot_de_passe()))
+                {System.out.println("citoyen connectee");
+                return true;}
+                else 
+                {System.err.println("mdp incorrecte");
+                    return false;}
             }
-            if((BCrypt.checkpw(mot_de_passe,cit.getMot_de_passe()))&&(cit.isEmail_confirmed()==true))
-            {System.out.println("citoyen connectee");
-            return true;}
-            else {
-                System.err.println("mdp incorrecte"); return false;}
+            else
+            {System.err.println("Tu n'est pas un citoyen");
+            return false;}
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             return false;

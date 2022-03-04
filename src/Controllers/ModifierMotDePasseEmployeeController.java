@@ -72,15 +72,15 @@ public class ModifierMotDePasseEmployeeController implements Initializable {
             {
                 EmployeeLoginService e=new EmployeeLoginService();
                 System.out.println(this.cin.getText());
-                e.modifierMotDePasse(this.cin.getText(),this.mdp.getText());
+                if(e.modifierMotDePasse(this.cin.getText(),this.mdp.getText()))
                     try {
                         Alert a=new Alert(Alert.AlertType.CONFIRMATION);
                         a.setContentText("Modification  Validée");
                         a.show();
                         
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/CitoyenLogin.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/EmployeeLogin.fxml"));
                         Parent root = loader.load();
-                        CitoyenLoginController verif=loader.getController();
+                        EmployeeLoginController verif=loader.getController();
                         this.modifier.getScene().setRoot(root);
                         
                     } catch (IOException ex) {

@@ -24,12 +24,12 @@ public class AdminLoginService {
     public AdminLoginService() {
     }
     
-    public static void modifierMotDePasse(String cin,String nouveau_mot_de_passe)
+    public  boolean modifierMotDePasse(String cin,String nouveau_mot_de_passe)
     {
             PreparedStatement select;
             ResultSet resultat;
             PreparedStatement update;
-            Citoyen cit=new Citoyen();
+            Admin cit=new Admin();
         try {
             select=cnx.prepareStatement("Select * from admin where cin='"+cin+"'");
             resultat=select.executeQuery();
@@ -40,16 +40,19 @@ public class AdminLoginService {
             cit.setCin(resultat.getString("cin"));
             cit.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
+            System.out.println(cit.toString());
             
                 update=cnx.prepareStatement("Update admin set mot_de_passe='"+BCrypt.hashpw(nouveau_mot_de_passe,BCrypt.gensalt())+"' Where cin='"+cin+"'");
                 update.executeUpdate();
                 System.out.println("mot de passe modifiee");
+                return true;
             
            
                // System.err.println("lancien mot de passe est incorrect");
             
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+            return false;
         }
         
          
@@ -116,7 +119,7 @@ public class AdminLoginService {
                     return false;}
             }
             else
-            {System.err.println("Tu n'est pas un employee");
+            {System.err.println("Tu n'est pas un admin");
             return false;}
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());

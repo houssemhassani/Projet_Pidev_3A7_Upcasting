@@ -46,7 +46,6 @@ public class ModifierMotDePasseAdminController implements Initializable {
         // TODO
     }    
 
-    @FXML
     private void modifierMDP(ActionEvent event) {
         System.out.println(this.mdp.getText());
         if(this.mdp.getText().equals("") || this.confirmmdp.getText().equals(""))
@@ -90,6 +89,49 @@ public class ModifierMotDePasseAdminController implements Initializable {
     public void setCin(String s)
     {
         this.cin.setText(s);
+    }
+
+    @FXML
+    private void modifiermdp(ActionEvent event) {
+        System.out.println("hhh");
+        System.out.println(this.mdp.getText());
+        if(this.mdp.getText().equals("") || this.confirmmdp.getText().equals(""))
+        {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("L'un de champs est vide");
+            a.show();
+        }
+        else
+        {
+            if(!(this.mdp.getText()).equals(this.confirmmdp.getText()))
+            {
+                this.labelerreur.setVisible(true);
+                this.labelerreur.setText("Non Compatible");
+                this.confirmmdp.setText("");
+                this.mdp.setText("");
+            }
+            else
+            {
+                AdminLoginService e=new AdminLoginService();
+                System.out.println(this.cin.getText());
+                e.modifierMotDePasse(this.cin.getText(),this.mdp.getText());
+                    try {
+                        Alert a=new Alert(Alert.AlertType.CONFIRMATION);
+                        a.setContentText("Modification  Validée");
+                        a.show();
+                        
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/AdminLogin.fxml"));
+                        Parent root = loader.load();
+                        AdminLoginController verif=loader.getController();
+                        this.modifier.getScene().setRoot(root);
+                        
+                    } catch (IOException ex) {
+                        System.err.println(ex.getMessage());
+                    }
+               
+            }
+            
+        }
     }
     
 }

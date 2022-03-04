@@ -76,7 +76,7 @@ public class MotDePasseOublieeService {
             System.out.println(cin);
             ResultSet resultat;
             PreparedStatement select;
-            select=cnx.prepareStatement("select email from employee where cin='"+cin+"' and role="+1);
+            select=cnx.prepareStatement("select * from employee where cin='"+cin+"' and role="+1);
             resultat=select.executeQuery();
             String s=null;
             while(resultat.next())

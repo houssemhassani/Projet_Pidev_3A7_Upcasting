@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #100f1f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierMotDePasseCitoyenController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #100f1f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierMotDePasseResponsableController">
    <children>
       <Button fx:id="modifier" layoutX="133.0" layoutY="256.0" mnemonicParsing="false" onAction="#modifierMDP" prefHeight="17.0" prefWidth="161.0" style="-fx-background-color: #03224C;" text="Modifier " textFill="#9991d0" />
       <PasswordField fx:id="mdp" layoutX="207.0" layoutY="131.0" promptText="Mot de passe" />

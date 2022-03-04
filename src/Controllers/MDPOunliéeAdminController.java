@@ -74,6 +74,7 @@ public class MDPOunliéeAdminController implements Initializable {
                     Parent root = loader.load();
                     ModifierMotDePasseAdminController verif=loader.getController();
                     verif.setCin(this.cin.getText());  
+                    System.out.println(this.cin.getText());
                     this.codeverifier.getScene().setRoot(root);  
                 } catch (IOException ex) {
                     
