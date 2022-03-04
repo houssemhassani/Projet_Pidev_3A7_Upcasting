@@ -20,8 +20,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import static javafx.scene.input.KeyCode.A;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -54,6 +57,18 @@ public class ModifierServiceResponsableController implements Initializable {
     private TextField cin;
     @FXML
     private ComboBox<String> service;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Button gereradmin;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.
@@ -178,6 +193,22 @@ public class ModifierServiceResponsableController implements Initializable {
     public void setEmail(String email)
     {
         this.email.setText(email);
+    }
+
+    @FXML
+    private void gereradmin(ActionEvent event) {
+        try {
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Admins.fxml"));
+                   Parent root = loader.load();
+                   //System.out.println(path);
+                   AdminsController controller =  loader.getController();
+                   //controller.setImage("");
+                  // controller.setNom(A.getNom()+" "+A.getPrenom());
+                   this.gereradmin.getScene().setRoot(root);
+               }
+               catch (IOException ex) {
+                        System.out.println(ex.getMessage());
+               }
     }
     
 }

@@ -19,9 +19,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -56,6 +59,16 @@ public class EmployeesController implements Initializable {
     private Button gerercitoyen;
     @FXML
     private Button gereradmin;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.

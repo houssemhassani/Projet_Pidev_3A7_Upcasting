@@ -19,9 +19,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -56,6 +59,18 @@ public class AdminsController implements Initializable {
     private Button gererresponsable;
     @FXML
     private Button gereremployee;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Button gereradmin;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.
@@ -184,6 +199,19 @@ public class AdminsController implements Initializable {
             Parent root = loader.load();
             EmployeesController controller =  loader.getController();
             this.gereremployee.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void gereradmin(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Admins.fxml"));
+            Parent root = loader.load();
+            AdminsController controller =  loader.getController();
+            this.gererresponsable.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

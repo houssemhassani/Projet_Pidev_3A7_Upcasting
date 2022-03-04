@@ -21,10 +21,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -67,6 +69,22 @@ public class ResponsablesController implements Initializable {
     @FXML
     private TextField recherchenom;
 ArrayList arrayList;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Button gererresponsable;
+    @FXML
+    private Button gereradmin;
+    @FXML
+    private Button gererservice;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
     /**
      * Initializes the controller class.
      * @param url
@@ -240,6 +258,45 @@ ArrayList arrayList;
                email.setCellValueFactory(new PropertyValueFactory<>("email"));
                nomService.setCellValueFactory(new PropertyValueFactory<>("nomService"));
            }
+    }
+
+    @FXML
+    private void gererresponsable(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/respnsables.fxml"));
+            Parent root = loader.load();
+            ResponsablesController controller =  loader.getController();
+            this.gerercitoyens.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void gereradmin(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Admins.fxml"));
+            Parent root = loader.load();
+            AdminsController controller =  loader.getController();
+            this.gereradmin.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void gererservice(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/services.fxml"));
+            Parent root = loader.load();
+            CitoyensController controller =  loader.getController();
+            this.gerercitoyens.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
 

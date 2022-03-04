@@ -4,45 +4,203 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjoutAdminController">
-    <children>
-      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="20.0" prefHeight="371.0" prefWidth="573.0" style="-fx-background-color: white;">
-         <children>
-            <AnchorPane layoutX="-14.0" layoutY="-20.0" prefHeight="419.0" prefWidth="600.0" style="-fx-background-color: white;">
+<AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjoutAdminController">
+   <children>
+      <BorderPane layoutX="-182.0" layoutY="59.0" prefHeight="509.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="nom" layoutX="85.0" layoutY="11.0" promptText="Nom" />
-                  <Label layoutX="15.0" layoutY="16.0" text="Nom" />
-                  <Label layoutX="16.0" layoutY="75.0" text="Prenom " />
-                  <Label layoutX="14.0" layoutY="143.0" text="Email" />
-                  <TextField fx:id="email" layoutX="85.0" layoutY="139.0" promptText="Email" />
-                  <Label layoutX="255.0" layoutY="75.0" text="Cin" />
-                  <TextField fx:id="cin" layoutX="366.0" layoutY="63.0" promptText="CIN" />
-                  <Label layoutX="250.0" layoutY="15.0" text="Num_Tel" />
-                  <PasswordField fx:id="mdp" layoutX="299.0" layoutY="199.0" promptText="Mot de passe" />
-                  <Label layoutX="253.0" layoutY="143.0" text="Mot de passe" />
-                  <Label layoutX="140.0" layoutY="205.0" text="Confirm mot de passe" />
-                  <PasswordField fx:id="confirmmdp" layoutX="365.0" layoutY="138.0" promptText="Confirm mot de passe" />
-                  <Label fx:id="cinerreur" layoutX="89.0" layoutY="234.0" text="Label" visible="false" />
-                  <Label fx:id="serviceeerreur" layoutX="371.0" layoutY="110.0" text="Label" textFill="#d02626" visible="false" />
-                  <Label fx:id="confirmerreur" layoutX="365.0" layoutY="234.0" text="ertretre" textFill="#da1f1f" visible="false" />
-                  <TextField fx:id="prenom" layoutX="85.0" layoutY="71.0" promptText="Prenom" />
-                  <TextField fx:id="num_tel" layoutX="365.0" layoutY="13.0" promptText="Num_tel" />
-                  <Button fx:id="ajouter" layoutX="209.0" layoutY="284.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #03224C;" text="Ajouter" textFill="#f2f2f2" />
-                  <Button fx:id="annuler" layoutX="351.0" layoutY="284.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #03224C;" text="Annuler" textFill="#f2f2f2" />
-                  <AnchorPane layoutX="3.0" layoutY="381.0" prefHeight="38.0" prefWidth="592.0" style="-fx-background-color: #03224C;">
+                  <Pane layoutX="60.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #032d40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button fx:id="gererresponsable" layoutX="97.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererresponsable" style="-fx-background-color: #03224C;" text="Gérer Responsable" textFill="#f2f2f2" />
-                        <Button fx:id="gererpublication" layoutX="389.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererpublication" style="-fx-background-color: #03224C;" text="Gérer Publication" textFill="#f2f2f2" />
-                        <Button fx:id="gerercitoyens" layoutX="9.0" layoutY="6.0" mnemonicParsing="false" onAction="#gerercitoyens" style="-fx-background-color: #03224C;" text="Gérer Citoyen" textFill="#f2f2f2" />
-                        <Button fx:id="gererservice" layoutX="497.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererService" style="-fx-background-color: #03224C;" text="Gérer Service" textFill="#f2f2f2" />
-                        <Button fx:id="gereremployee" layoutX="209.0" layoutY="7.0" mnemonicParsing="false" onAction="#gereremployee" style="-fx-background-color: #03224C;" text="Gérer Employée" textFill="#f2f2f2" />
-                        <Button fx:id="gereradmin" layoutX="306.0" layoutY="7.0" mnemonicParsing="false" onAction="#gereradmin" style="-fx-background-color: #03224C;" text="Gérer Admin" textFill="#f2f2f2" />
+                        <ImageView fx:id="Exit" fitHeight="22.0" fitWidth="22.0" layoutX="867.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="86.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <Button fx:id="gererresponsable" mnemonicParsing="false" onAction="#gererresponsable" prefHeight="38.0" prefWidth="172.0" text="Gérer Responsable">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gerercitoyens" mnemonicParsing="false" onAction="#gerercitoyens" prefHeight="38.0" prefWidth="141.0" text="Gérer Citoyen">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gereradmin" mnemonicParsing="false" onAction="#gereradmin" prefHeight="38.0" prefWidth="124.0" text="Gérer Admin">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gererpublication" mnemonicParsing="false" onAction="#gererpublication" prefHeight="38.0" prefWidth="172.0" text="Gérer Publication">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gererservice" mnemonicParsing="false" onAction="#gererService" prefHeight="36.0" prefWidth="141.0" text="Gérer Service">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gereremployee" mnemonicParsing="false" onAction="#gereremployee" prefHeight="36.0" prefWidth="141.0" text="Gérer Employee">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="14.0" layoutY="35.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MenuBack" layoutX="14.0" layoutY="34.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fx:id="MenuClose" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="482.0" prefWidth="181.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="38.0" layoutY="46.0" prefHeight="429.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                     <children>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Modifier Responsable" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Ajouter Responsable" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Retirer Responsable" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="QRCode" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+      <AnchorPane id="AnchorPane" layoutX="178.0" layoutY="95.0" prefHeight="400.0" prefWidth="600.0" />
+      <AnchorPane id="AnchorPane" layoutX="165.0" layoutY="76.0" prefHeight="400.0" prefWidth="600.0" />
+      <AnchorPane id="AnchorPane" layoutX="285.0" layoutY="109.0" prefHeight="350.0" prefWidth="561.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="33.0" layoutY="92.0" prefHeight="299.0" prefWidth="554.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" layoutX="183.0" layoutY="91.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="132.0" layoutY="90.0" prefHeight="329.0" prefWidth="519.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="-110.0" layoutY="-44.0" prefHeight="399.0" prefWidth="637.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="nom" layoutX="85.0" layoutY="11.0" promptText="Nom" />
+                        <Label layoutX="15.0" layoutY="16.0" text="Nom" />
+                        <Label layoutX="16.0" layoutY="75.0" text="Prenom " />
+                        <Label layoutX="14.0" layoutY="143.0" text="Email" />
+                        <TextField fx:id="email" layoutX="85.0" layoutY="139.0" promptText="Email" />
+                        <Label layoutX="255.0" layoutY="75.0" text="Cin" />
+                        <TextField fx:id="cin" layoutX="366.0" layoutY="63.0" promptText="CIN" />
+                        <Label layoutX="250.0" layoutY="15.0" text="Num_Tel" />
+                        <PasswordField fx:id="mdp" layoutX="299.0" layoutY="199.0" promptText="Mot de passe" />
+                        <Label layoutX="253.0" layoutY="143.0" text="Mot de passe" />
+                        <Label layoutX="140.0" layoutY="205.0" text="Confirm mot de passe" />
+                        <PasswordField fx:id="confirmmdp" layoutX="365.0" layoutY="138.0" promptText="Confirm mot de passe" />
+                        <Label fx:id="cinerreur" layoutX="89.0" layoutY="234.0" text="Label" visible="false" />
+                        <Label fx:id="serviceeerreur" layoutX="371.0" layoutY="110.0" text="Label" textFill="#d02626" visible="false" />
+                        <Label fx:id="confirmerreur" layoutX="365.0" layoutY="234.0" text="ertretre" textFill="#da1f1f" visible="false" />
+                        <TextField fx:id="prenom" layoutX="85.0" layoutY="71.0" promptText="Prenom" />
+                        <TextField fx:id="num_tel" layoutX="365.0" layoutY="13.0" promptText="Num_tel" />
+                        <Button fx:id="ajouter" layoutX="209.0" layoutY="284.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #03224C;" text="Ajouter" textFill="#f2f2f2" />
+                        <Button fx:id="annuler" layoutX="351.0" layoutY="284.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #03224C;" text="Annuler" textFill="#f2f2f2" />
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <Label layoutX="260.0" layoutY="14.0" text="Ajouter Admin" textFill="#1f105e">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

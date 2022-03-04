@@ -5,37 +5,183 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="liste" prefHeight="458.0" prefWidth="709.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ResponsablesController"> 
-    <children>
-      <TableView fx:id="table_view" layoutX="34.0" layoutY="39.0" prefHeight="375.0" prefWidth="646.0">
-        <columns>
-          <TableColumn fx:id="nom" prefWidth="126.0" text="Nom" />
-          <TableColumn fx:id="prenom" prefWidth="126.0" text="Prenom" />
-            <TableColumn fx:id="cin" prefWidth="126.0" text="CIN" />
-            <TableColumn fx:id="email" prefWidth="135.0" text="E-mail" />
-            <TableColumn fx:id="nomService" prefWidth="132.0" text="Nom Service" />
-        </columns>
-      </TableView>
-      <AnchorPane layoutX="-1.0" layoutY="414.0" prefHeight="38.0" prefWidth="709.0" style="-fx-background-color: #03224C;">
+<AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ResponsablesController">
+   <children>
+      <BorderPane layoutX="-182.0" layoutY="59.0" prefHeight="509.0" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="60.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #032d40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fx:id="Exit" fitHeight="22.0" fitWidth="22.0" layoutX="867.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="86.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <Button fx:id="gererresponsable" mnemonicParsing="false" onAction="#gererresponsable" prefHeight="38.0" prefWidth="172.0" text="Gérer Responsable">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gerercitoyens" mnemonicParsing="false" onAction="#gerercitoyens" prefHeight="38.0" prefWidth="141.0" text="Gérer Citoyen">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gereradmin" mnemonicParsing="false" onAction="#gereradmin" prefHeight="38.0" prefWidth="124.0" text="Gérer Admin">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gererpublication" mnemonicParsing="false" onAction="#gererpublication" prefHeight="38.0" prefWidth="172.0" text="Gérer Publication">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gererservice" mnemonicParsing="false" onAction="#gererservice" prefHeight="36.0" prefWidth="141.0" text="Gérer Service">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gereremployee" mnemonicParsing="false" onAction="#gereremployee" prefHeight="36.0" prefWidth="141.0" text="Gérer Employee">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="14.0" layoutY="35.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MenuBack" layoutX="14.0" layoutY="34.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fx:id="MenuClose" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="482.0" prefWidth="181.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="38.0" layoutY="46.0" prefHeight="429.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                     <children>
+                        <Button fx:id="update" lineSpacing="10.0" mnemonicParsing="false" onAction="#update" prefHeight="38.0" prefWidth="172.0" text="Modifier Responsable">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="add" lineSpacing="10.0" mnemonicParsing="false" onAction="#add" prefHeight="38.0" prefWidth="172.0" text="Ajouter Responsable">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="delete" lineSpacing="10.0" mnemonicParsing="false" onAction="#delete" prefHeight="38.0" prefWidth="172.0" text="Retirer Responsable">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="qrcode" lineSpacing="10.0" mnemonicParsing="false" onAction="#qrCode" prefHeight="38.0" prefWidth="172.0" text="QRCode">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+      <AnchorPane id="AnchorPane" layoutX="178.0" layoutY="95.0" prefHeight="400.0" prefWidth="600.0" />
+      <AnchorPane id="AnchorPane" layoutX="165.0" layoutY="76.0" prefHeight="400.0" prefWidth="600.0" />
+      <AnchorPane id="AnchorPane" fx:id="liste" layoutX="158.0" layoutY="76.0" prefHeight="410.0" prefWidth="643.0" styleClass="mainFxmlClass">
          <children>
-            <Button fx:id="delete" layoutX="406.0" layoutY="7.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #03224C;" text="Retirer Responsable" textFill="WHITE" />
-            <Button fx:id="update" layoutX="522.0" layoutY="7.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #03224C;" text="Modifier Responsable" textFill="#fffdfd" />
-            <Button fx:id="add" layoutX="283.0" layoutY="7.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #03224C;" text="Ajouter Responsable" textFill="#f2f2f2" />
-            <Button fx:id="gererpublication" layoutX="81.0" layoutY="7.0" mnemonicParsing="false" onAction="#gererpublication" style="-fx-background-color: #03224C;" text="Gérer Publication" textFill="#f2f2f2" />
-            <Button fx:id="gerercitoyens" layoutX="-1.0" layoutY="6.0" mnemonicParsing="false" onAction="#gerercitoyens" style="-fx-background-color: #03224C;" text="Gérer Citoyen" textFill="#f2f2f2" />
-            <Button fx:id="qrcode" layoutX="649.0" layoutY="7.0" mnemonicParsing="false" onAction="#qrCode" style="-fx-background-color: #03224C;" text="QRCode" textFill="#fffdfd" />
-            <Button fx:id="gereremployee" layoutX="183.0" layoutY="7.0" mnemonicParsing="false" onAction="#gereremployee" style="-fx-background-color: #03224C;" text="Gérer Employée" textFill="#f2f2f2" />
+            <TableView fx:id="table_view" layoutX="61.0" layoutY="96.0" prefHeight="375.0" prefWidth="646.0">
+               <columns>
+                  <TableColumn fx:id="nom" prefWidth="126.0" text="Nom" />
+                  <TableColumn fx:id="prenom" prefWidth="126.0" text="Prenom" />
+                  <TableColumn fx:id="cin" prefWidth="126.0" text="CIN" />
+                  <TableColumn fx:id="email" prefWidth="135.0" text="E-mail" />
+                  <TableColumn fx:id="nomService" prefWidth="132.0" text="Nom Service" />
+               </columns>
+            </TableView>
+            <Label layoutX="233.0" layoutY="44.0" text="Liste Des Responsables" textFill="#09418a">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="recherchebynom" layoutX="204.0" layoutY="7.0" mnemonicParsing="false" onAction="#recherchebynom" text="Button" />
+            <TextField fx:id="recherchenom" layoutX="35.0" layoutY="7.0" />
          </children>
       </AnchorPane>
-      <Label layoutX="219.0" layoutY="-1.0" text="Liste Des Responsables" textFill="#09418a">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <Button fx:id="recherchebynom" layoutX="162.0" layoutY="7.0" mnemonicParsing="false" onAction="#recherchebynom" text="Button" />
-      <TextField fx:id="recherchenom" layoutX="4.0" layoutY="7.0" />
    </children>
 </AnchorPane>

@@ -22,6 +22,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -62,10 +64,19 @@ public class AjoutEmployeeController implements Initializable {
     private Button gerercitoyens;
     @FXML
     private Button gererservice;
-    @FXML
     private Button gereremployee;
     @FXML
     private Button gereradmin;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.
@@ -134,18 +145,7 @@ public class AjoutEmployeeController implements Initializable {
         this.prenom.setText("");
     }
 
-    @FXML
-    private void gererresponsable(ActionEvent event) {
-        try {
-                    
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/respnsables.fxml"));
-                    Parent root = loader.load();
-                    ResponsablesController controller =  loader.getController();
-                    this.gererresponsable.getScene().setRoot(root);
-                } catch (IOException ex) {
-                    Logger.getLogger(AjoutEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-    }
+   
 
     @FXML
     private void gererpublication(ActionEvent event) {
@@ -186,7 +186,6 @@ public class AjoutEmployeeController implements Initializable {
                 }
     }
 
-    @FXML
     private void gereremployee(ActionEvent event) {
         try {
                     
@@ -207,6 +206,19 @@ public class AjoutEmployeeController implements Initializable {
                     Parent root = loader.load();
                     EmployeesController controller =  loader.getController();
                     this.gereradmin.getScene().setRoot(root);
+                } catch (IOException ex) {
+                    Logger.getLogger(AjoutEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+    }
+
+    @FXML
+    private void gererResponsable(ActionEvent event) {
+        try {
+                    
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/respnsables.fxml"));
+                    Parent root = loader.load();
+                    ResponsablesController controller =  loader.getController();
+                    this.gererresponsable.getScene().setRoot(root);
                 } catch (IOException ex) {
                     Logger.getLogger(AjoutEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
                 }

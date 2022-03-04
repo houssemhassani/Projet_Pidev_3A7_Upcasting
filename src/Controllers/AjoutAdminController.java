@@ -22,6 +22,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -66,6 +68,16 @@ public class AjoutAdminController implements Initializable {
     private Button gereremployee;
     @FXML
     private Button gereradmin;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.

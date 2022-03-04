@@ -17,8 +17,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 /**
@@ -28,11 +30,8 @@ import javafx.stage.FileChooser;
  */
 public class QrcodeController implements Initializable {
 
-    @FXML
     private Label nom;
-    @FXML
     private ImageView image;
-    @FXML
     private Button gerercitoyen;
     @FXML
     private Button gererpublication;
@@ -42,6 +41,32 @@ public class QrcodeController implements Initializable {
     private Button gererservice;
     @FXML
     private Button gereremployee;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Button gerercitoyens;
+    @FXML
+    private Button gereradmin;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
+    @FXML
+    private TextField cin;
+    @FXML
+    private Button updateemail;
+    @FXML
+    private TextField cin2;
+    @FXML
+    private TextField mdp;
+    @FXML
+    private TextField confirmmdp;
+    @FXML
+    private Button updatemdp;
      
   
   
@@ -69,18 +94,6 @@ public class QrcodeController implements Initializable {
                 this.nom.setText(path);
     }
 
-    @FXML
-    private void gerercitoyen(ActionEvent event) {
-        
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Citoyens.fxml"));
-            Parent root = loader.load();
-            CitoyensController controller =  loader.getController();
-            this.gerercitoyen.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(QrcodeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
     @FXML
     private void gererpublication(ActionEvent event) {
@@ -128,6 +141,38 @@ public class QrcodeController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(QrcodeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void gerercitoyens(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Citoyens.fxml"));
+            Parent root = loader.load();
+            CitoyensController controller =  loader.getController();
+            this.gerercitoyens.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(QrcodeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void gereradmin(ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Admins.fxml"));
+            Parent root = loader.load();
+            AdminsController controller =  loader.getController();
+            this.gerercitoyen.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(QrcodeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void updateemail(ActionEvent event) {
+    }
+
+    @FXML
+    private void updatemdp(ActionEvent event) {
     }
     
 }

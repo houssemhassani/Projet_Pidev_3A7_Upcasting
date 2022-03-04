@@ -24,6 +24,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -70,6 +72,18 @@ public class AjoutResponsableController implements Initializable {
     private Button gereremployee;
     @FXML
     private Button gererservice;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private Button gereradmin;
+    @FXML
+    private Label Menu;
+    @FXML
+    private Label MenuBack;
+    @FXML
+    private ImageView MenuClose;
+    @FXML
+    private AnchorPane slider;
 
     /**
      * Initializes the controller class.
@@ -205,6 +219,19 @@ public class AjoutResponsableController implements Initializable {
             Parent root = loader.load();
             ResponsablesController controller =  loader.getController();
             this.gererservice.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void gereradmin(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Admins.fxml"));
+            Parent root = loader.load();
+            AdminsController controller =  loader.getController();
+            this.gereradmin.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
