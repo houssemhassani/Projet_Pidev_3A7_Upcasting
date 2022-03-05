@@ -26,7 +26,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <HBox layoutX="86.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+                  <HBox layoutX="112.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-25.0" AnchorPane.topAnchor="25.0">
                      <children>
                         <Button fx:id="gererresponsable" mnemonicParsing="false" onAction="#gererresponsable" prefHeight="38.0" prefWidth="172.0" text="Gérer Responsable">
                            <graphic>
@@ -154,7 +154,7 @@
                         </Button>
                      </children>
                   </VBox>
-                  <Label fx:id="nomlabel" layoutX="63.0" layoutY="26.0" textFill="#f5f0f0" />
+                  <Label fx:id="nomlabel" layoutX="4.0" layoutY="26.0" textFill="#f5f0f0" />
                </children>
             </AnchorPane>
          </left>

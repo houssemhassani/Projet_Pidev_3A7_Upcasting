@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Services.GererResponsableService;
 import Services.ResponsableLoginService;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -72,6 +73,8 @@ public class GérerProfilResponsableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        GererResponsableService g=new GererResponsableService();
+            this.nomlabel.setText(g.getResponsable(AdminLoginController.cinn));
     }    
 
     @FXML

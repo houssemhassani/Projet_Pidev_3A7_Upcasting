@@ -39,6 +39,7 @@ public class ResponsableLoginController implements Initializable {
     private Button btnLogin;
     @FXML
     private Hyperlink MdpOublié;
+    public static String cinresponsable;
 
     /**
      * Initializes the controller class.
@@ -62,6 +63,7 @@ public class ResponsableLoginController implements Initializable {
             return;
         }
         if(s.seConnecter(cin.getText(),mdp.getText())) {
+            cinresponsable=cin.getText();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Citoyens.fxml"));
             Parent root = loader.load();
             CitoyensController verif=loader.getController();

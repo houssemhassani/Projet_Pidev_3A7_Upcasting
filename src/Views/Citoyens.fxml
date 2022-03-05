@@ -148,7 +148,7 @@
                         <Label text="Label" visible="false" />
                      </children>
                   </VBox>
-                  <Label fx:id="nomlabel" layoutX="66.0" layoutY="21.0" textFill="#e1dcdc" />
+                  <Label fx:id="nomlabel" layoutX="14.0" layoutY="20.0" textFill="#e1dcdc" />
                </children>
             </AnchorPane>
          </left>

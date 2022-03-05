@@ -139,7 +139,7 @@
                         <Label fx:id="cinlabel" visible="false" />
                      </children>
                   </VBox>
-                  <Label fx:id="nomlabel" layoutX="40.0" layoutY="25.0" textFill="#eeecec" />
+                  <Label fx:id="nomlabel" layoutX="10.0" layoutY="25.0" textFill="#eeecec" />
                </children>
             </AnchorPane>
          </left>

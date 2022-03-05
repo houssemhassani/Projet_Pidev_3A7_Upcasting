@@ -157,7 +157,7 @@
                         <Label fx:id="cinlabel" text="Label" visible="false" />
                      </children>
                   </VBox>
-                  <Label fx:id="nomlabel" layoutX="77.0" layoutY="24.0" textFill="#eee7e7" />
+                  <Label fx:id="nomlabel" layoutX="9.0" layoutY="18.0" textFill="#eee7e7" />
                </children>
             </AnchorPane>
          </left>

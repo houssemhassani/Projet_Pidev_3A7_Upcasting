@@ -36,6 +36,7 @@ public class EmployeeLoginController implements Initializable {
     private Button btnLogin;
     @FXML
     private Hyperlink MdpOublié;
+    public static String cinemployee;
 
     /**
      * Initializes the controller class.
@@ -58,6 +59,8 @@ public class EmployeeLoginController implements Initializable {
             return;
         }
         if(EmployeeLoginService.seConnecter(cin.getText(), mdp.getText())) {
+            cinemployee=cin.getText();
+                    
              Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/Views/HomeC.fxml"));
         Scene scene = new Scene(root);
