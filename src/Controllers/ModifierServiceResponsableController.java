@@ -69,6 +69,8 @@ public class ModifierServiceResponsableController implements Initializable {
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label nomlabel;
 
     /**
      * Initializes the controller class.

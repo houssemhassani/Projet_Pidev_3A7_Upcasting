@@ -27,31 +27,13 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <HBox layoutX="86.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+                  <HBox layoutX="119.0" layoutY="25.0" prefHeight="40.0" prefWidth="805.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-32.0" AnchorPane.topAnchor="25.0">
                      <children>
-                        <Button fx:id="gererresponsable" mnemonicParsing="false" onAction="#gererresponsable" prefHeight="38.0" prefWidth="172.0" text="Gérer Responsable">
-                           <graphic>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/home.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="gerercitoyens" mnemonicParsing="false" onAction="#gerercitoyens" prefHeight="38.0" prefWidth="141.0" text="Gérer Citoyen">
+                        <Button fx:id="gererprofil" mnemonicParsing="false" onAction="#gererprofil" prefHeight="38.0" prefWidth="141.0" text="Gérer Profil">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/add1.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="gereradmin" mnemonicParsing="false" onAction="#gereradmin" prefHeight="38.0" prefWidth="124.0" text="Gérer Admin">
-                           <graphic>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/report1.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -65,7 +47,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="gererservice" mnemonicParsing="false" onAction="#gererservice" prefHeight="36.0" prefWidth="141.0" text="Gérer Service">
+                        <Button fx:id="gererreclamation" mnemonicParsing="false" onAction="#gererreclamation" prefHeight="36.0" prefWidth="141.0" text="Gérer Réclamation">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -74,7 +56,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="gereremployee" mnemonicParsing="false" onAction="#gereremployee" prefHeight="36.0" prefWidth="141.0" text="Gérer Employee">
+                        <Button fx:id="gererdemande" mnemonicParsing="false" onAction="#gererdemande" prefHeight="36.0" prefWidth="141.0" text="Gérer Demande">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -155,6 +137,7 @@
                         </Button>
                      </children>
                   </VBox>
+                  <Label fx:id="nomlabel" layoutX="63.0" layoutY="26.0" textFill="#f8f4f4" />
                </children>
             </AnchorPane>
          </left>
@@ -170,7 +153,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="cin" layoutX="214.0" layoutY="59.0" promptText="Votre Cin SVP !!" />
-                  <TextField layoutX="214.0" layoutY="98.0" promptText="Nouveau Email" />
+                  <TextField fx:id="email" layoutX="214.0" layoutY="98.0" promptText="Nouveau Email" />
                   <Button fx:id="updateemail" layoutX="213.0" layoutY="137.0" mnemonicParsing="false" onAction="#updateemail" prefHeight="25.0" prefWidth="149.0" text="Modifier Email" />
                   <Label layoutX="188.0" layoutY="186.0" text="Modifier Mot De Passe" textFill="#2a085b">
                      <font>
@@ -181,6 +164,7 @@
                   <TextField fx:id="mdp" layoutX="214.0" layoutY="270.0" promptText="Nouveau Mot De Passe" />
                   <TextField fx:id="confirmmdp" layoutX="214.0" layoutY="311.0" promptText="Confirmer Mot De Passe" />
                   <Button fx:id="updatemdp" layoutX="214.0" layoutY="351.0" mnemonicParsing="false" onAction="#updatemdp" prefHeight="25.0" prefWidth="149.0" text="Modifier Mot De Passe" />
+                  <Label fx:id="cinlabel" layoutX="88.0" layoutY="28.0" text="Label" visible="false" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

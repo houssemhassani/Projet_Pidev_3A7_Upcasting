@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Services.GererAdminService;
 import Services.GererCitoyenService;
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -30,6 +32,8 @@ public class StatController implements Initializable {
     private PieChart pie;
     @FXML
     private Hyperlink retour;
+    @FXML
+    private Label cinlabel;
 
     /**
      * Initializes the controller class.
@@ -49,7 +53,10 @@ public class StatController implements Initializable {
              new PieChart.Data("Citoyens Confirmes", j),
              new PieChart.Data("Citoyens Non Confirmee", k)
         );
-        pie.setData(pieE);   // TODO
+        
+        pie.setData(pieE);
+        
+// TODO
     }    
 
     @FXML

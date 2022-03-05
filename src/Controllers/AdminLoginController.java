@@ -41,6 +41,7 @@ public class AdminLoginController implements Initializable {
     private Button btnLogin;
     @FXML
     private Hyperlink MdpOublié;
+    public static String cinn;
 
     /**
      * Initializes the controller class.
@@ -76,11 +77,23 @@ public class AdminLoginController implements Initializable {
             return;
         }
         if(s.seConnecter(cin.getText(), mdp.getText())) {
-            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/Views/Citoyens.fxml"));
-        Scene scene = new Scene(root);
-           primaryStage.setScene(scene);
-        primaryStage.show();  
+            try {
+                System.out.println("cin ; "+cin.getText());
+            Parent root;
+            cinn=cin.getText();
+            Stage primaryStage=new Stage();
+            root = FXMLLoader.load(AdminLoginService.class.getResource("/Views/Citoyens.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("choix!");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            System.out.println("choix");
+            
+                
+        } 
+        catch (IOException ex) {
+            System.out.println("Erreur " + ex.getMessage());
+        }
             }
         else
         {

@@ -5,11 +5,13 @@
  */
 package Controllers;
 
+import Services.EmployeeLoginService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -57,6 +59,12 @@ public class GérerProfilEmployeeController implements Initializable {
     private TextField confirmmdp;
     @FXML
     private Button updatemdp;
+    @FXML
+    private TextField email;
+    @FXML
+    private Label nomlabel;
+    @FXML
+    private Label cinlabel;
 
     /**
      * Initializes the controller class.
@@ -92,10 +100,81 @@ public class GérerProfilEmployeeController implements Initializable {
 
     @FXML
     private void updateemail(ActionEvent event) {
+         if(this.cin.getText().equals("") || this.email.getText().equals(""))
+        {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setHeaderText(null);
+            a.setContentText("L'un de champ est vide");
+            a.show();
+            return;
+        }
+        EmployeeLoginService v=new EmployeeLoginService();
+       boolean test=v.modifierEmail(this.cin.getText(), this.email.getText());
+       if(test)
+       {
+           Alert a=new Alert(Alert.AlertType.INFORMATION);
+           a.setTitle("confirmation !!");
+           
+           a.setHeaderText("");
+           a.setContentText("Modification effectuée avec succées");
+           a.show();
+           this.cin.setText("");
+           this.email.setText("");
+           
+       }
+       else
+       {
+           Alert a=new Alert(Alert.AlertType.ERROR);
+           a.setTitle("Echec !!");
+           
+           a.setHeaderText("");
+           a.setContentText("CIN Introuvable");
+           a.show();
+           this.cin.setText("");
+           this.email.setText("");
+       }
+        
     }
 
     @FXML
     private void updatemdp(ActionEvent event) {
+        if(this.cin2.getText().equals("")||this.confirmmdp.getText().equals("")||
+                this.mdp.getText().equals(""))
+        {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setHeaderText("");
+            a.setContentText("L'un de champs est vide");
+            a.show();
+            return;
+        }
+        else
+        {
+            if(this.mdp.getText().equals(confirmmdp.getText()))
+            {
+                EmployeeLoginService a=new EmployeeLoginService();
+                if(a.modifierMotDePasse(this.cin2.getText(), this.mdp.getText()))
+                {
+                    Alert b=new Alert(Alert.AlertType.INFORMATION);
+                    b.setHeaderText("");
+                    b.setContentText("Bien modifié");
+                    b.setTitle("Validation !!");
+                    b.show();   
+                    this.mdp.setText("");
+                    this.confirmmdp.setText("");
+                    this.cin2.setText("");
+                    return;
+                }
+                else
+                {
+                    Alert c=new Alert(Alert.AlertType.ERROR);
+                    c.setHeaderText("");
+                    c.setContentText("CIN Incoorect");
+                    c.setTitle("Echec");
+                    c.show();
+                    return;
+                }
+            }
+        }
     }
     
 }

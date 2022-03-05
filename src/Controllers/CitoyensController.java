@@ -6,6 +6,7 @@
 package Controllers;
 
 import Entities.Citoyen;
+import Services.GererAdminService;
 
 import Services.GererCitoyenService;
 import java.io.IOException;
@@ -78,6 +79,10 @@ private Button detail;
     private ImageView Exit;
     @FXML
     private ImageView MenuClose;
+   
+    //public static  String cinlabel;
+    @FXML
+    private Label nomlabel;
     /**
      * Initializes the controller class.
      * @param url
@@ -96,6 +101,8 @@ private Button detail;
             cin.setCellValueFactory(new PropertyValueFactory<>("cin"));
             email.setCellValueFactory(new PropertyValueFactory<>("email"));
             ville.setCellValueFactory(new PropertyValueFactory<>("ville"));
+            GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
     @FXML
     private void delete(ActionEvent event) {
@@ -223,5 +230,6 @@ private Button detail;
             System.out.println(ex.getMessage());
         }
     }
+    
     
 }

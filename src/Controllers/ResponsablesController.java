@@ -7,6 +7,7 @@ package Controllers;
 
 import Entities.Responsable;
 import Entities.Service;
+import Services.GererAdminService;
 import Services.GererResponsableService;
 import java.io.IOException;
 import java.net.URL;
@@ -85,6 +86,10 @@ ArrayList arrayList;
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label nomlabel;
+    @FXML
+    private Label cinlabel;
     /**
      * Initializes the controller class.
      * @param url
@@ -105,6 +110,8 @@ ArrayList arrayList;
             cin.setCellValueFactory(new PropertyValueFactory<>("cin"));
             email.setCellValueFactory(new PropertyValueFactory<>("email"));
            nomService.setCellValueFactory(new PropertyValueFactory<>("nomService"));
+           GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
 
     @FXML

@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -57,7 +59,7 @@ public class AdminLoginService {
         
          
     }
-     public static void modifierEmail(String cin,String mot_de_passe,String email)
+     public boolean modifierEmail(String cin,String email)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -74,21 +76,18 @@ public class AdminLoginService {
             admin.setCin(resultat.getString("cin"));
             admin.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
-            if(BCrypt.checkpw(mot_de_passe,admin.getMot_de_passe()))
-            {
+            
                 update=cnx.prepareStatement("Update admin set email='"+email+"' Where cin='"+cin+"'");
                 update.executeLargeUpdate();
                 System.out.println("email modifiee");
-            }
-            else
-            {
-                System.err.println(" mot de passe est incorrect");
-            }
+                return true;
+            
         }catch (SQLException ex) {
             System.err.println(ex.getMessage());
+            return false;
         }
         catch (NullPointerException e) {
-            System.err.println(e.getMessage());
+            System.err.println(e.getMessage());return false;
             
         } 
         
@@ -144,11 +143,7 @@ public class AdminLoginService {
                // System.out.println("erreur lors de la recherche de l'evenement " + ex.getMessage());
         }   
         return null;
-        
-
-     
-     
-     
      }
+    
     
 }

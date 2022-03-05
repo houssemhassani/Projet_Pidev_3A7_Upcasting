@@ -114,11 +114,11 @@
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane fx:id="slider" prefHeight="482.0" prefWidth="181.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="slider" prefHeight="449.0" prefWidth="193.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
                <children>
-                  <VBox layoutX="38.0" layoutY="46.0" prefHeight="429.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                  <VBox layoutX="38.0" layoutY="46.0" prefHeight="396.0" prefWidth="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-12.0" AnchorPane.topAnchor="53.0">
                      <children>
-                        <Button fx:id="delete" lineSpacing="10.0" mnemonicParsing="false" onAction="#delete" prefHeight="38.0" prefWidth="172.0" text="Retirer Admin">
+                        <Button fx:id="delete" lineSpacing="10.0" mnemonicParsing="false" onAction="#delete" prefHeight="38.0" prefWidth="193.0" text="Retirer Admin">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -127,7 +127,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="add" lineSpacing="10.0" mnemonicParsing="false" onAction="#add" prefHeight="38.0" prefWidth="172.0" text="Ajouter Admin">
+                        <Button fx:id="add" lineSpacing="10.0" mnemonicParsing="false" onAction="#add" prefHeight="38.0" prefWidth="193.0" text="Ajouter Admin">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -136,7 +136,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="qrcode" lineSpacing="10.0" mnemonicParsing="false" onAction="#qrCode" prefHeight="38.0" prefWidth="172.0" text="QR Code">
+                        <Button fx:id="qrcode" lineSpacing="10.0" mnemonicParsing="false" onAction="#qrCode" prefHeight="38.0" prefWidth="193.0" text="QR Code">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -154,8 +154,10 @@
                               </ImageView>
                            </graphic>
                         </Button>
+                        <Label fx:id="cinlabel" text="Label" visible="false" />
                      </children>
                   </VBox>
+                  <Label fx:id="nomlabel" layoutX="77.0" layoutY="24.0" textFill="#eee7e7" />
                </children>
             </AnchorPane>
          </left>

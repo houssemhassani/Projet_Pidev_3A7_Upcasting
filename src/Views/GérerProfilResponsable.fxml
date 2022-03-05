@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.GérerProfilResponsableController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GérerProfilResponsableController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="509.0" prefWidth="892.0">
          <children>
@@ -158,6 +157,7 @@
                               </Button>
                            </children>
                         </VBox>
+                        <Label fx:id="nomlabel" layoutX="63.0" layoutY="23.0" textFill="#f5efef" />
                      </children>
                   </AnchorPane>
                </left>
@@ -173,7 +173,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="cin" layoutX="214.0" layoutY="59.0" promptText="Votre Cin SVP !!" />
-                        <TextField layoutX="214.0" layoutY="98.0" promptText="Nouveau Email" />
+                        <TextField fx:id="email" layoutX="214.0" layoutY="98.0" promptText="Nouveau Email" />
                         <Button fx:id="updateemail" layoutX="213.0" layoutY="137.0" mnemonicParsing="false" onAction="#updateemail" prefHeight="25.0" prefWidth="149.0" text="Modifier Email" />
                         <Label layoutX="188.0" layoutY="186.0" text="Modifier Mot De Passe" textFill="#2a085b">
                            <font>
@@ -184,6 +184,7 @@
                         <TextField fx:id="mdp" layoutX="214.0" layoutY="270.0" promptText="Nouveau Mot De Passe" />
                         <TextField fx:id="confirmmdp" layoutX="214.0" layoutY="311.0" promptText="Confirmer Mot De Passe" />
                         <Button fx:id="updatemdp" layoutX="214.0" layoutY="351.0" mnemonicParsing="false" onAction="#updatemdp" prefHeight="25.0" prefWidth="149.0" text="Modifier Mot De Passe" />
+                        <Label fx:id="cinlabel" layoutX="35.0" layoutY="6.0" visible="false" />
                      </children>
                   </AnchorPane>
                </children>

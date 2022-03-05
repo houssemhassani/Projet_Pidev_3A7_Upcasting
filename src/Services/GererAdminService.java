@@ -19,6 +19,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.glxn.qrgen.QRCode;
 import net.glxn.qrgen.image.ImageType;
 
@@ -142,5 +144,23 @@ public class GererAdminService {
             return null;
         } 
     }
+      public String getAdmin(String cin)
+     {
+         String nom=null;
+        try {
+            PreparedStatement select;
+            ResultSet resultat;
+            select=cnx.prepareStatement("select * from admin where cin='"+cin+"'");
+            resultat=select.executeQuery();
+            while (resultat.next())
+            {
+                nom=resultat.getString("nom")+" "+resultat.getString("prenom");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminLoginService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nom;
+     }
     
 }

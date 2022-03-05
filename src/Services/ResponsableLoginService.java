@@ -24,7 +24,7 @@ public class ResponsableLoginService {
     public ResponsableLoginService() {
     }
     
-    public static void modifierMotDePasse(String cin,String nouveau_mot_de_passe)
+    public  boolean modifierMotDePasse(String cin,String nouveau_mot_de_passe)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -45,17 +45,17 @@ public class ResponsableLoginService {
                 update.executeUpdate();
                 System.out.println("mot de passe modifiee");
             
-           
+           return true;
                // System.err.println("lancien mot de passe est incorrect");
             
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            System.err.println(ex.getMessage());return false;
         }
         
         
          
     }
-     public static void modifierEmail(String cin,String mot_de_passe,String email)
+     public boolean modifierEmail(String cin,String email)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -74,23 +74,19 @@ public class ResponsableLoginService {
                     cit.setCin(resultat.getString("cin"));
                     cit.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
-                if(BCrypt.checkpw(mot_de_passe,cit.getMot_de_passe()))
-                {
+               
                     update=cnx.prepareStatement("Update employee set email='"+email+"' Where cin='"+cin+"'");
                     update.executeUpdate();
-                    JavaMailUtil.sendEmail(email, "Bienvenue Mr "+cit.getNom()+" "+cit.getPrenom()+"\n Login :"+cit.getCin()+"\n Mot de passe :"+mot_de_passe);
+                    JavaMailUtil.sendEmail(email, "Bienvenue Mr "+cit.getNom()+" "+cit.getPrenom()+"\n Login :"+cit.getCin());
                     System.out.println("email modifiee");
                     
-                }
-                else
-                {
-                    System.err.println(" mot de passe est incorrect");
-                }
+                return true;
             }
             else
-                System.out.println("Compte introuvable");
+            {
+                System.out.println("Compte introuvable");return false;}
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            System.err.println(ex.getMessage()); return false;
         }
         
          

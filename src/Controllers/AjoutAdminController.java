@@ -78,6 +78,10 @@ public class AjoutAdminController implements Initializable {
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label nomlabel;
+    @FXML
+    private Label cinlabel;
 
     /**
      * Initializes the controller class.
@@ -85,6 +89,8 @@ public class AjoutAdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
 
     @FXML

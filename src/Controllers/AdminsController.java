@@ -71,6 +71,10 @@ public class AdminsController implements Initializable {
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label cinlabel;
+    @FXML
+    private Label nomlabel;
 
     /**
      * Initializes the controller class.
@@ -87,6 +91,8 @@ public class AdminsController implements Initializable {
             prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
             cin.setCellValueFactory(new PropertyValueFactory<>("cin"));
             email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
 
     @FXML

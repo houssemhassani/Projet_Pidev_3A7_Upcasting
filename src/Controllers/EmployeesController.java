@@ -6,6 +6,7 @@
 package Controllers;
 
 import Entities.Employee;
+import Services.GererAdminService;
 import Services.GererEmployeeService;
 import java.io.IOException;
 import java.net.URL;
@@ -69,6 +70,10 @@ public class EmployeesController implements Initializable {
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label cinlabel;
+    @FXML
+    private Label nomlabel;
 
     /**
      * Initializes the controller class.
@@ -85,6 +90,8 @@ public class EmployeesController implements Initializable {
             prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
             cin.setCellValueFactory(new PropertyValueFactory<>("cin"));
             email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
 
     @FXML

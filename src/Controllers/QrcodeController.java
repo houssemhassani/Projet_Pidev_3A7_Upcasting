@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Services.GererAdminService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,7 +31,9 @@ import javafx.stage.FileChooser;
  */
 public class QrcodeController implements Initializable {
 
+    @FXML
     private Label nom;
+    @FXML
     private ImageView image;
     private Button gerercitoyen;
     @FXML
@@ -56,17 +59,9 @@ public class QrcodeController implements Initializable {
     @FXML
     private AnchorPane slider;
     @FXML
-    private TextField cin;
+    private Label nomlabel;
     @FXML
-    private Button updateemail;
-    @FXML
-    private TextField cin2;
-    @FXML
-    private TextField mdp;
-    @FXML
-    private TextField confirmmdp;
-    @FXML
-    private Button updatemdp;
+    private Label cinlabel;
      
   
   
@@ -79,6 +74,8 @@ public class QrcodeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     } 
     public void setImage(String path)
     {
@@ -167,12 +164,5 @@ public class QrcodeController implements Initializable {
         }
     }
 
-    @FXML
-    private void updateemail(ActionEvent event) {
-    }
-
-    @FXML
-    private void updatemdp(ActionEvent event) {
-    }
     
 }

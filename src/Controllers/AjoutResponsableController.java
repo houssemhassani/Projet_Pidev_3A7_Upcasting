@@ -7,6 +7,7 @@ package Controllers;
 
 import Entities.Responsable;
 import Entities.Service;
+import Services.GererAdminService;
 import Services.GererResponsableService;
 import Services.GererServices;
 import java.io.IOException;
@@ -84,6 +85,10 @@ public class AjoutResponsableController implements Initializable {
     private ImageView MenuClose;
     @FXML
     private AnchorPane slider;
+    @FXML
+    private Label nomlabel;
+    @FXML
+    private Label cinlabel;
 
     /**
      * Initializes the controller class.
@@ -95,6 +100,8 @@ public class AjoutResponsableController implements Initializable {
         GererServices e=new GererServices();
         servicess=e.getAllServices();
         this.services.getItems().addAll(servicess);
+        GererAdminService g=new GererAdminService();
+            this.nomlabel.setText(g.getAdmin(AdminLoginController.cinn));
     }    
 
     @FXML
@@ -119,7 +126,7 @@ public class AjoutResponsableController implements Initializable {
            // cit.setNum_tel((Long.parseLong(num_tel.getText())));
             cit.setCin(cin.getText());
             cit.setMot_de_passe(mdp.getText());
-            cit.setNom_service(services.getValue().toString());
+            cit.setNom_service(services.getValue());
             GererResponsableService v=new GererResponsableService();
             if(v.ajouterResponsable(cit))
             {

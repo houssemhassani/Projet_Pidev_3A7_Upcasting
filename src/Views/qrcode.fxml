@@ -154,6 +154,7 @@
                         </Button>
                      </children>
                   </VBox>
+                  <Label fx:id="nomlabel" layoutX="63.0" layoutY="26.0" textFill="#f5f0f0" />
                </children>
             </AnchorPane>
          </left>
@@ -174,6 +175,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Label fx:id="cinlabel" layoutX="48.0" layoutY="55.0" visible="false" />
          </children>
       </AnchorPane>
    </children>

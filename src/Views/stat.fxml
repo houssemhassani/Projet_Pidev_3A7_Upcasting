@@ -15,5 +15,6 @@
          </font>
       </Label>
       <Hyperlink fx:id="retour" layoutX="264.0" layoutY="363.0" onAction="#retour" text="Retour !!" />
+      <Label fx:id="cinlabel" layoutX="93.0" layoutY="48.0" text="Label" visible="false" />
    </children>
 </AnchorPane>

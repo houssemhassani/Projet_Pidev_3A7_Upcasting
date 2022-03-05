@@ -114,7 +114,7 @@ public class EmployeeLoginService {
             return false;
         }
     }
-     public static void modifierEmail(String cin,String mot_de_passe,String email)
+     public boolean modifierEmail(String cin,String email)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -133,23 +133,22 @@ public class EmployeeLoginService {
                     cit.setCin(resultat.getString("cin"));
                     cit.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
-                if(BCrypt.checkpw(mot_de_passe,cit.getMot_de_passe()))
-                {
+                
                     update=cnx.prepareStatement("Update employee set email='"+email+"' Where cin='"+cin+"'");
                     update.executeUpdate();
                     JavaMailUtil.sendEmail(cit.getEmail(),"Vous avez changée votre email !!  \n Votre nouvelle email est :"+email);
                     JavaMailUtil.sendEmail(email, "Bienvenue dans E-Citoyen avec votre nouvelle email ");
                     System.out.println("email modifiee");
-                }
-                else
-                {
-                    System.err.println(" mot de passe est incorrect");
-                }
+               
+                    return true;
+                }else
+            {
+                return false;
             }
-            else
-                System.out.println("Compte introuvable");
+            
+            
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            System.err.println(ex.getMessage()); return false;
         }
     }
     

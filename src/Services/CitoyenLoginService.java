@@ -101,7 +101,7 @@ public class CitoyenLoginService {
         
          
     }
-     public static void modifierPhoto(String cin,String mot_de_passe,String photo)
+     public boolean modifierEmail(String cin,String photo)
     {
             PreparedStatement select;
             ResultSet resultat;
@@ -118,18 +118,14 @@ public class CitoyenLoginService {
             cit.setCin(resultat.getString("cin"));
             cit.setMot_de_passe(resultat.getString("mot_de_passe"));
             }
-            if(BCrypt.checkpw(mot_de_passe,cit.getMot_de_passe()))
-            {
-                update=cnx.prepareStatement("Update citoyen set photo='"+photo+"' Where cin='"+cin+"'");
-                update.executeLargeUpdate();
+            
+                update=cnx.prepareStatement("Update citoyen set email='"+photo+"' Where cin='"+cin+"'");
+                update.executeUpdate();
                 System.out.println("photo modifiee");
-            }
-            else
-            {
-                System.err.println(" mot de passe est incorrect");
-            }
+            return true;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+            return false;
         }
         
          

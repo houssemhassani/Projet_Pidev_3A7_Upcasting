@@ -157,6 +157,7 @@
                         </Button>
                      </children>
                   </VBox>
+                  <Label fx:id="nomlabel" layoutX="77.0" layoutY="14.0" textFill="#ebe9e9" />
                </children>
             </AnchorPane>
          </left>
@@ -181,6 +182,7 @@
             </Label>
             <Button fx:id="recherchebynom" layoutX="204.0" layoutY="7.0" mnemonicParsing="false" onAction="#recherchebynom" text="Button" />
             <TextField fx:id="recherchenom" layoutX="35.0" layoutY="7.0" />
+            <Label fx:id="cinlabel" layoutX="96.0" layoutY="56.0" text="Label" visible="false" />
          </children>
       </AnchorPane>
    </children>
