@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DemandeController">
    <children>
       <BorderPane layoutX="-182.0" layoutY="59.0" prefHeight="622.0" prefWidth="1256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -32,7 +32,7 @@
                   </Pane>
                   <HBox layoutX="267.0" layoutY="26.0" prefHeight="40.0" prefWidth="956.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="26.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Dashboard">
+                        <Button fx:id="gestiondemande" mnemonicParsing="false" onAction="#Gererdemande" prefHeight="38.0" prefWidth="172.0" text="Demande">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -41,7 +41,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="ADD">
+                        <Button fx:id="btnprofil" mnemonicParsing="false" onAction="#gererprofil" prefHeight="38.0" prefWidth="172.0" text="Profil">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -50,7 +50,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Report">
+                        <Button fx:id="btnreclamation" mnemonicParsing="false" onAction="#btnreclamation" prefHeight="38.0" prefWidth="172.0" text="Reclamation">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -59,7 +59,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="BackUp">
+                        <Button fx:id="btnpublication" mnemonicParsing="false" onAction="#gererpublication" prefHeight="38.0" prefWidth="172.0" text="Publication">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -102,7 +102,7 @@
                <children>
                   <VBox layoutX="38.0" layoutY="46.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
                      <children>
-                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Dashboard">
+                        <Button fx:id="btnajouter" lineSpacing="10.0" mnemonicParsing="false" onAction="#savedemande" prefHeight="38.0" prefWidth="172.0" text="ajouter">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -111,7 +111,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="ADD">
+                        <Button fx:id="btnmodifier" lineSpacing="10.0" mnemonicParsing="false" onAction="#Edit" prefHeight="38.0" prefWidth="172.0" text="modifier">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -120,20 +120,11 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Report">
+                        <Button fx:id="btnsupprimer" lineSpacing="10.0" mnemonicParsing="false" onAction="#Delete" prefHeight="38.0" prefWidth="172.0" text="supprimer">
                            <graphic>
                               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/report.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Backup">
-                           <graphic>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/data.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -155,11 +146,8 @@
                         <Label layoutX="14.0" layoutY="260.0" text="date_demande" textFill="#0cc21b" />
                         <TextField fx:id="tfDATE" layoutX="122.0" layoutY="255.0" prefHeight="30.0" prefWidth="140.0" />
                         <Label layoutX="14.0" layoutY="341.0" text="Nom service" textFill="#0cc21b" />
-                        <Button fx:id="btnajouter" layoutX="30.0" layoutY="462.0" mnemonicParsing="false" onAction="#savedemande" onMouseClicked="#getSelected" style="-fx-background-color: green;" text="ajouter" />
-                        <Button fx:id="btnmodifier" layoutX="129.0" layoutY="462.0" mnemonicParsing="false" onAction="#Edit" style="-fx-background-color: orange;" text="modifier" />
                         <TextField fx:id="tfID" layoutX="122.0" layoutY="72.0" prefHeight="30.0" prefWidth="140.0" />
                         <Label layoutX="40.0" layoutY="77.0" text="id" textFill="#0cc21b" />
-                        <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="462.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: red;" text="supprimer" />
                         <ComboBox fx:id="tfSERVICE" layoutX="117.0" layoutY="336.0" prefWidth="150.0" />
                         <Label fx:id="idcitoyen" layoutX="175.0" layoutY="28.0" text="1" visible="false" />
                      </children>
