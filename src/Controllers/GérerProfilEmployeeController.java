@@ -6,6 +6,7 @@
 package Controllers;
 
 import Services.EmployeeLoginService;
+import Services.GererEmployeeService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -72,6 +73,8 @@ public class GérerProfilEmployeeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        GererEmployeeService g=new GererEmployeeService();
+            this.nomlabel.setText(g.getEmployee(EmployeeLoginController.cinemployee));
     }    
 
     @FXML

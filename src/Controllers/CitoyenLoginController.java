@@ -46,6 +46,7 @@ public class CitoyenLoginController implements Initializable {
     private AnchorPane inscrippane;
     @FXML
     private Label cinlable;
+    public static String cincitoyen;
     @FXML
     private Button btnlogin;
 
@@ -71,6 +72,7 @@ public class CitoyenLoginController implements Initializable {
             return;
         }
         if(s.seConnecter(cin.getText(), mdp.getText())) {
+            cincitoyen=cin.getText();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/HomeC.fxml"));
             Parent root = loader.load();
             HomeCController verif=loader.getController();
@@ -84,6 +86,16 @@ public class CitoyenLoginController implements Initializable {
             a.show();
             this.cin.setText("");
             this.mdp.setText("");
+             try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/VerificationInscriptionCitoyen.fxml"));
+            Parent root = loader.load();
+            VerificationInscriptionCitoyenController controller =  loader.getController();
+            //controller.setCin(this.cinlabel.getText());
+            this.btnlogin.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
         }
     }
     @FXML

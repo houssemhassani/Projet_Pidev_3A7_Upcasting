@@ -187,6 +187,24 @@ public class GererCitoyenService {
         } 
         
         }
+     public String getCitoyen(String cin)
+     {
+         String nom=null;
+        try {
+            PreparedStatement select;
+            ResultSet resultat;
+            select=cnx.prepareStatement("select * from citoyen where cin='"+cin+"'");
+            resultat=select.executeQuery();
+            while (resultat.next())
+            {
+                nom=resultat.getString("nom")+" "+resultat.getString("prenom");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminLoginService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nom;
+     }
     
     
     

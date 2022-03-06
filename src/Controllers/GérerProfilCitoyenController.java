@@ -7,6 +7,7 @@ package Controllers;
 
 import Services.CitoyenLoginService;
 import Services.GererAdminService;
+import Services.GererCitoyenService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -72,7 +73,8 @@ public class GérerProfilCitoyenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        GererCitoyenService g=new GererCitoyenService();
+            this.nomlabel.setText(g.getCitoyen(CitoyenLoginController.cincitoyen));
     }    
 
 
@@ -185,6 +187,16 @@ public class GérerProfilCitoyenController implements Initializable {
 
     @FXML
     private void gererreclamation(ActionEvent event) {
+         try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/respnsables.fxml"));
+            Parent root = loader.load();
+            ResponsablesController controller =  loader.getController();
+            //controller.setCin(this.cinlabel.getText());
+            this.gererreclamation.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @FXML

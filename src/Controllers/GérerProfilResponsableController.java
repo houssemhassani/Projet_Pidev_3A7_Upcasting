@@ -74,7 +74,7 @@ public class GérerProfilResponsableController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         GererResponsableService g=new GererResponsableService();
-            this.nomlabel.setText(g.getResponsable(AdminLoginController.cinn));
+            this.nomlabel.setText(g.getResponsable(ResponsableLoginController.cinresponsable));
     }    
 
     @FXML

@@ -125,6 +125,18 @@ public class CitoyenInscriptionController implements Initializable {
             
     }
     @FXML
-    public void login(){}
+    public void login(){
+        try {
+            Alert a=new Alert(Alert.AlertType.CONFIRMATION);
+            a.setContentText("Inscription Validée");
+            a.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/CitoyenLogin.fxml"));
+            Parent root = loader.load();
+              
+            nom.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(CitoyenInscriptionController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

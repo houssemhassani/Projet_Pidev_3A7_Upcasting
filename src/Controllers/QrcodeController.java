@@ -83,6 +83,7 @@ public class QrcodeController implements Initializable {
        
         
        image.setImage(im);
+       
         
    
          }
