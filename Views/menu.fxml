@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="-182.0" layoutY="59.0" prefHeight="622.0" prefWidth="1256.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="60.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #032d40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fx:id="Exit" fitHeight="22.0" fitWidth="22.0" layoutX="1165.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="267.0" layoutY="26.0" prefHeight="40.0" prefWidth="956.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="26.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Dashboard">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="ADD">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Report">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="BackUp">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="14.0" layoutY="35.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MenuBack" layoutX="14.0" layoutY="34.0" text="MENU" textFill="#b7b7b7">
+                     <graphic>
+                        <ImageView fx:id="MenuClose" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="362.0" prefWidth="176.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="38.0" layoutY="46.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                     <children>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Dashboard">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="ADD">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Report">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/report.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button lineSpacing="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="172.0" text="Backup">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/data.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#nonselected" prefHeight="557.0" prefWidth="1021.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="pane" prefHeight="557.0" prefWidth="266.0" style="-fx-background-color: #03224C;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="135.0" text="num_demande" textFill="#0cc21b" />
+                        <TextField fx:id="tfNUM" layoutX="122.0" layoutY="130.0" prefHeight="30.0" prefWidth="140.0" />
+                        <Label layoutX="15.0" layoutY="195.0" text="type_demande" textFill="#0cc21b" />
+                        <TextField fx:id="tfTYPE" layoutX="122.0" layoutY="190.0" prefHeight="30.0" prefWidth="140.0" />
+                        <Label layoutX="14.0" layoutY="260.0" text="date_demande" textFill="#0cc21b" />
+                        <TextField fx:id="tfDATE" layoutX="122.0" layoutY="255.0" prefHeight="30.0" prefWidth="140.0" />
+                        <Label layoutX="14.0" layoutY="341.0" text="Nom service" textFill="#0cc21b" />
+                        <Button fx:id="btnajouter" layoutX="30.0" layoutY="462.0" mnemonicParsing="false" onAction="#savedemande" onMouseClicked="#getSelected" style="-fx-background-color: green;" text="ajouter" />
+                        <Button fx:id="btnmodifier" layoutX="129.0" layoutY="462.0" mnemonicParsing="false" onAction="#Edit" style="-fx-background-color: orange;" text="modifier" />
+                        <TextField fx:id="tfID" layoutX="122.0" layoutY="72.0" prefHeight="30.0" prefWidth="140.0" />
+                        <Label layoutX="40.0" layoutY="77.0" text="id" textFill="#0cc21b" />
+                        <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="462.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: red;" text="supprimer" />
+                        <ComboBox fx:id="tfSERVICE" layoutX="117.0" layoutY="336.0" prefWidth="150.0" />
+                        <Label fx:id="idcitoyen" layoutX="175.0" layoutY="28.0" text="1" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="table_demande" layoutX="370.0" layoutY="189.0" onMouseClicked="#getSelected" prefHeight="285.0" prefWidth="550.0">
+                     <columns>
+                        <TableColumn fx:id="col_ID" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="col_numero" prefWidth="75.0" text="numero" />
+                        <TableColumn fx:id="col_type" prefWidth="75.0" text="type" />
+                        <TableColumn fx:id="col_date" prefWidth="117.0" text="date" />
+                        <TableColumn fx:id="col_citoyen" prefWidth="90.0" text="citoyen" />
+                        <TableColumn fx:id="col_service" prefWidth="85.0" text="service" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="filterFiled" layoutX="548.0" layoutY="126.0" promptText="SEARCH" />
+                  <Label layoutX="503.0" layoutY="35.0" text="Gestion des demandes" textFill="#03224c">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
